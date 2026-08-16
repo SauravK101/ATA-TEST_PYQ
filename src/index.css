@@ -19,7 +19,7 @@
 
 @layer utilities {
   .glass-panel {
-    @apply bg-nocturne-surface/60 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)];
+    @apply bg-nocturne-surface/60 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0, 0, 0, 0.5)];
   }
 }
 
@@ -35,13 +35,16 @@ body {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-nocturne-border);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-nocturne-text-tertiary);
 }

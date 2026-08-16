@@ -110,6 +110,7 @@ export default function TestPage() {
           onSubmitSuccess={markAnsweredAndAdvance}
           isLastQuestion={isLastQuestion}
           onEndTest={handleEndTest}
+          timeLimit={setId === 'question-set-2' ? 120 * 60 : 60 * 60}
         />
       </div>
     </div>

@@ -3,11 +3,11 @@ import Editor from '@monaco-editor/react';
 import { Play, Check, Clock, Globe, AlertTriangle } from 'lucide-react';
 import { usePyodide } from '../hooks/usePyodide';
 
-export default function RightPanel({ question, code, onCodeChange, onSubmitSuccess, isLastQuestion, onEndTest }) {
+export default function RightPanel({ question, code, onCodeChange, onSubmitSuccess, isLastQuestion, onEndTest, timeLimit = 60 * 60 }) {
   const { runCode, isReady } = usePyodide();
   const [outputConsole, setOutputConsole] = useState('');
   const [isRunning, setIsRunning] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(60 * 60); // 60 minutes
+  const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [showEndModal, setShowEndModal] = useState(false);
 
   useEffect(() => {
@@ -104,9 +104,6 @@ export default function RightPanel({ question, code, onCodeChange, onSubmitSucce
       setOutputConsole(prev => prev + '\nAll test cases PASSED! ✅\nMoving to next step...');
       setTimeout(() => {
         onSubmitSuccess();
-        if (isLastQuestion) {
-          onEndTest();
-        }
         setOutputConsole('');
       }, 1500);
     } else {
@@ -180,7 +177,7 @@ export default function RightPanel({ question, code, onCodeChange, onSubmitSucce
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-nocturne-accent hover:bg-nocturne-accent/80 text-white transition-colors disabled:opacity-50"
             >
               <Check className="w-4 h-4" />
-              <span>{isLastQuestion ? 'Submit & End Test' : 'Submit Code'}</span>
+              <span>Submit Code</span>
             </button>
           </div>
         </div>
