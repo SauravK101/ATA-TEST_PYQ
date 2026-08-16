@@ -1,132 +1,232 @@
 [
   {
     "id": 1,
-    "title": "Calculate Average",
-    "description": "Write a program that takes a list of numbers and returns the average (mean) of those numbers. Approach: Use a loop to compute the total sum of the numbers. Divide the total by the number of elements to find the mean.",
-    "codeStub": "# You are using Python\ndef calculate_average(numbers):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = calculate_average(numbers)\nprint(result)",
-    "sampleTestCases": [
+    "title": "1. Calculate Average",
+    "given": "Write a program that takes a list of numbers and returns the average (mean) of those numbers.",
+    "ask": "Approach:\n• Use a loop to compute the total sum of the numbers.\n• Divide the total by the number of elements to find the mean.",
+    "input_format": "A list of integers",
+    "output_format": "Float",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
+        "test_case": 1,
         "input": "10 20 30 40 50",
-        "expectedOutput": "30.0\n"
+        "output": "30.0"
       },
       {
+        "test_case": 2,
         "input": "15 25",
-        "expectedOutput": "20.0\n"
+        "output": "20.0"
       }
     ],
-    "hiddenTestCases": [
-      {
-        "input": "5 15 25",
-        "expectedOutput": "15.0\n"
-      },
-      {
-        "input": "100 200",
-        "expectedOutput": "150.0\n"
-      }
-    ]
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef calculate_average(numbers):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = calculate_average(numbers)\nprint(result)"
   },
   {
     "id": 2,
-    "title": "Sum of Even Numbers",
-    "description": "Write a program that takes a list of integers and returns the sum of all even numbers in the list. Approach: Use a loop to iterate through the list. Check if each number is even using the modulus operator. Accumulate the sum of even numbers.",
-    "codeStub": "# You are using Python\ndef sum_even_numbers(numbers):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = sum_even_numbers(numbers)\nprint(result)",
-    "sampleTestCases": [
+    "title": "2. Sum of Even Numbers",
+    "given": "Write a program that takes a list of integers and returns the sum of all even numbers in the list.",
+    "ask": "Approach:\n• Use a loop to iterate through the list.\n• Check if each number is even using the modulus operator.\n• Accumulate the sum of even numbers.",
+    "input_format": "A list of integers",
+    "output_format": "Integer",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
+        "test_case": 1,
         "input": "1 2 3 4 5 6",
-        "expectedOutput": "12\n"
+        "output": "12"
       },
       {
+        "test_case": 2,
         "input": "10 15 20 25",
-        "expectedOutput": "30\n"
+        "output": "30"
       }
     ],
-    "hiddenTestCases": [
-      {
-        "input": "2 4 6",
-        "expectedOutput": "12\n"
-      },
-      {
-        "input": "7 9 11",
-        "expectedOutput": "0\n"
-      }
-    ]
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef sum_even_numbers(numbers):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = sum_even_numbers(numbers)\nprint(result)"
   },
   {
     "id": 3,
-    "title": "Count Elements",
-    "description": "Write a program that takes a list and an element, and returns how many times that element appears in the list. Approach: Use a loop to iterate through the list. Compare each item to the target. Count occurrences using a counter variable.",
-    "codeStub": "# You are using Python\ndef count_element(items, target):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nitems = list(map(int, input().split()))\ntarget = int(input())\nresult = count_element(items, target)\nprint(result)",
-    "sampleTestCases": [
+    "title": "3. Count Elements",
+    "given": "Write a program that takes a list and an element, and returns how many times that element appears in the list.",
+    "ask": "Approach:\n• Use a loop to iterate through the list.\n• Compare each item to the target.\n• Count occurrences using a counter variable.",
+    "input_format": "• A list of elements (integers)\n• A target element (integer)",
+    "output_format": "Integer",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
+        "test_case": 1,
         "input": "1 2 3 2 4 2 5\n2",
-        "expectedOutput": "3\n"
+        "output": "3"
       },
       {
+        "test_case": 2,
         "input": "10 20 30 40\n50",
-        "expectedOutput": "0\n"
+        "output": "0"
       }
     ],
-    "hiddenTestCases": [
-      {
-        "input": "5 5 5\n5",
-        "expectedOutput": "3\n"
-      },
-      {
-        "input": "1 2 3\n1",
-        "expectedOutput": "1\n"
-      }
-    ]
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef count_element(items, target):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nitems = list(map(int, input().split()))\ntarget = int(input())\nresult = count_element(items, target)\nprint(result)"
   },
   {
     "id": 4,
-    "title": "Polynomial Evaluation",
-    "description": "Write a program that evaluates a polynomial at a given value of x. The polynomial is represented by a list of coefficients in ascending order of power. For example, a list [2, 3, 1] represents the polynomial 2 + 3x + x^2. The program should take the list of coefficients and a value of x as input and return the evaluated result.",
-    "codeStub": "# You are using Python\ndef evaluate_polynomial(coefficients, x):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\ncoefficients = list(map(int, input().split()))\nx = int(input())\nresult = evaluate_polynomial(coefficients, x)\nif hasattr(result, 'is_integer') and result.is_integer():\n    print(int(result))\nelse:\n    print(result)",
-    "sampleTestCases": [
+    "title": "4. Polynomial Evaluation",
+    "given": "Write a program that evaluates a polynomial at a given value of x. The polynomial is represented by a list of coefficients in ascending order of power. For example, a list [2, 3, 1] represents the polynomial 2 + 3x + x^2. The program should take the list of coefficients and a value of x as input and return the evaluated result.",
+    "ask": "Approach:\n• Use a loop to iterate through each coefficient.\n• For each coefficient c at index i, calculate c × x^i and add it to the evaluated result.",
+    "input_format": "• A list of integers representing the polynomial coefficients\n• An integer representing the value of x",
+    "output_format": "Integer or Float",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
+        "test_case": 1,
         "input": "2 3 1\n2",
-        "expectedOutput": "12\n"
+        "output": "12"
       },
       {
+        "test_case": 2,
         "input": "1 0 -1\n3",
-        "expectedOutput": "-8\n"
+        "output": "-8"
       }
     ],
-    "hiddenTestCases": [
-      {
-        "input": "5 2\n10",
-        "expectedOutput": "25\n"
-      },
-      {
-        "input": "0 0 1\n5",
-        "expectedOutput": "25\n"
-      }
-    ]
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef evaluate_polynomial(coefficients, x):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\ncoefficients = list(map(int, input().split()))\nx = int(input())\nresult = evaluate_polynomial(coefficients, x)\nif hasattr(result, 'is_integer') and result.is_integer():\n    print(int(result))\nelse:\n    print(result)"
   },
   {
     "id": 5,
-    "title": "Reverse List",
-    "description": "Write a program that takes a list and returns a new list with the elements in reverse order. Do not use Python's built-in reverse() method or reversed() function. Approach: Use a loop to iterate through the list from the last index to the first. Append each element to a new list.",
-    "codeStub": "# You are using Python\ndef reverse_list(items):\n    # Your code goes here...\n\nitems = list(map(int, input().split()))\nresult = reverse_list(items)\nprint(result)",
-    "sampleTestCases": [
+    "title": "5. Reverse List",
+    "given": "Write a program that takes a list and returns a new list with the elements in reverse order. Do not use Python’s built-in reverse() method or reversed() function.",
+    "ask": "Approach:\n• Use a loop to iterate through the list from the last index to the first.\n• Append each element to a new list.",
+    "input_format": "• A list of integers",
+    "output_format": "A list of integers",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
+        "test_case": 1,
         "input": "1 2 3 4 5",
-        "expectedOutput": "[5, 4, 3, 2, 1]\n"
+        "output": "[5, 4, 3, 2, 1]"
       },
       {
+        "test_case": 2,
         "input": "10 20 30",
-        "expectedOutput": "[30, 20, 10]\n"
+        "output": "[30, 20, 10]"
       }
     ],
-    "hiddenTestCases": [
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef reverse_list(items):\n    # Your code goes here...\n    pass\n\nitems = list(map(int, input().split()))\nresult = reverse_list(items)\nprint(result)"
+  },
+  {
+    "id": 6,
+    "title": "6. Polynomial Derivative",
+    "given": "Write a program that takes a list of polynomial coefficients (in ascending order of power) and returns a new list representing the coefficients of its derivative.",
+    "ask": "Approach:\n• Use a loop to multiply each coefficient by its power index. \n• Skip the constant term (as its derivative is zero). \n• Return the resulting list of new coefficients.",
+    "input_format": "• A list of integers representing the polynomial coefficients",
+    "output_format": "A list of integers representing the derivative coefficients",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
-        "input": "9 8 7",
-        "expectedOutput": "[7, 8, 9]\n"
+        "test_case": 1,
+        "input": "2 3 4",
+        "output": "[3, 8]"
       },
       {
-        "input": "1",
-        "expectedOutput": "[1]\n"
+        "test_case": 2,
+        "input": "5 0 2 1",
+        "output": "[0, 4, 3]"
       }
-    ]
+    ],
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef polynomial_derivative(coefficients):\n    # Your code goes here...\n    pass\n\ncoefficients = list(map(int, input().split()))\nresult = polynomial_derivative(coefficients)\nprint(result)"
+  },
+  {
+    "id": 7,
+    "title": "7. Find Second Maximum and Second Minimum",
+    "given": "Write a program that takes a list of numbers and returns the second maximum and second minimum values in the list. The result should be returned as a tuple (second_max, second_min). You can assume the list contains at least two distinct elements.",
+    "ask": "Approach:\n• Remove duplicates using a set.\n• Sort the set.\n• Pick the second last element as second maximum and the second element as second minimum.",
+    "input_format": "A list of integers",
+    "output_format": "A tuple of two integers",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
+      {
+        "test_case": 1,
+        "input": "5 1 3 9 7 2",
+        "output": "(7, 2)"
+      },
+      {
+        "test_case": 2,
+        "input": "10 10 20 20 30",
+        "output": "(20, 20)"
+      }
+    ],
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef find_second_max_min(numbers):\n    # Your code goes here...\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = find_second_max_min(numbers)\nprint(result)"
+  },
+  {
+    "id": 8,
+    "title": "8. Merging Sorted Lists",
+    "given": "Write a program that takes two sorted lists (in ascending order) and merges them into a single sorted list (also in ascending order).",
+    "ask": "Approach:\n• Use two pointers to compare elements from both lists.\n• Add the smaller element to the result list.\n• Append any remaining elements after one list is exhausted.",
+    "input_format": "Two lists of integers (each on a new line)",
+    "output_format": "A merged sorted list of integers",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
+      {
+        "test_case": 1,
+        "input": "1 3 5\n2 4 6",
+        "output": "[1, 2, 3, 4, 5, 6]"
+      },
+      {
+        "test_case": 2,
+        "input": "10 20\n15 25 30",
+        "output": "[10, 15, 20, 25, 30]"
+      }
+    ],
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef merge_sorted_lists(list1, list2):\n    # Your code goes here...\n    pass\n\nlist1 = list(map(int, input().split()))\nlist2 = list(map(int, input().split()))\nresult = merge_sorted_lists(list1, list2)\nprint(result)"
+  },
+  {
+    "id": 9,
+    "title": "9. Find Lost Item",
+    "given": "Write a program that helps find a lost item in different rooms of a house.\nYou will be given:\n• A list of room names (comma-separated on one line)\n• A list of items for each room (each room’s item list on a new line, comma-separated)\n• A single line with the name of the item to be found\n\nThe program should return:\n• A tuple of the form (room_name, item_index) if the item is found\n• Or (None, -1) if the item is not found",
+    "ask": "",
+    "input_format": "Comma-separated strings",
+    "output_format": "A tuple containing a string and an integer",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
+      {
+        "test_case": 1,
+        "input": "Kitchen,Living Room,Bedroom\nApple,Banana,Orange\nTV,Sofa,Remote\nBed,Lamp,Book\nRemote",
+        "output": "('Living Room', 2)"
+      },
+      {
+        "test_case": 2,
+        "input": "Garage,Attic\nWrench,Hammer\nOld Clothes,Boxes\nScrewdriver",
+        "output": "(None, -1)"
+      }
+    ],
+    "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef find_lost_item(rooms, items_in_rooms, lost_item):\n    # Your code goes here...\n    pass\n\nrooms = input().split(',')\nitems_in_rooms = [input().split(',') for _ in range(len(rooms))]\nlost_item = input().strip()\nresult = find_lost_item(rooms, items_in_rooms, lost_item)\nprint(result)"
+  },
+  {
+    "id": 10,
+    "title": "10. Finding a Book",
+    "given": "Write a program that simulates finding a book on a shelf. The function takes a list of book titles and the title of the book you’re looking for. It should return the index of the book if found, or -1 if the book is not on the shelf.",
+    "ask": "Approach:\n• Use a loop to perform a linear search through the list.\n• Compare each book with the target.\n• If found, return the index; otherwise, return -1.",
+    "input_format": "• A comma-separated string representing the list of books on the shelf.\n• A string representing the target book to find.",
+    "output_format": "An integer representing the index of the book, or -1 if not found.",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
+      {
+        "test_case": 1,
+        "input": "The Hobbit,1984,Dune,Foundation\nDune",
+        "output": "2"
+      },
+      {
+        "test_case": 2,
+        "input": "Harry Potter,Lord of the Rings\nNeuromancer",
+        "output": "-1"
+      }
+    ],
+    "note": "",
+    "code_stub": "# You are using Python\ndef find_book(book_shelf, target_book):\n    # Your code goes here...\n    pass\n\nbook_shelf = input().split(',')\ntarget_book = input()\nresult = find_book(book_shelf, target_book)\nprint(result)"
   }
 ]

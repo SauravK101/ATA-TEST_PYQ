@@ -1,90 +1,74 @@
 [
     {
         "id": 1,
-        "title": "Count Consonants",
-        "description": "Write a function `count_consonants(s)` that takes a string `s` and returns how many consonants are in it, counting both uppercase and lowercase letters. A consonant is any English alphabet letter that is not a vowel (a, e, i, o, u, case-insensitive). Ignore digits, symbols, and spaces. Count only alphabetic consonants (letters that are not vowels).",
-        "codeStub": "# You are using Python\ndef count_consonants(s):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\ns = input().strip()\n\n# Output\nprint(count_consonants(s))",
-        "sampleTestCases": [
+        "title": "1. Count Consonants",
+        "given": "Write a function count_consonants(s) that takes a string s and returns how many consonants are in it, counting both uppercase and lowercase letters. A consonant is any English alphabet letter that is not a vowel (a, e, i, o, u, case-insensitive). Ignore digits, symbols, and spaces.",
+        "ask": "",
+        "input_format": "• The input consists of a single line containing a string s.\n• The string may contain letters (upper- and lowercase), digits, symbols, and spaces.",
+        "output_format": "• Print a single integer: the number of consonants in the string.",
+        "code_constraints": "• The string s may be non-empty.\n• Count only alphabetic consonants (letters that are not vowels).",
+        "sample_test_cases": [
             {
+                "test_case": 1,
                 "input": "PROGRAMMING",
-                "expectedOutput": "8\n"
+                "output": "8"
             }
         ],
-        "hiddenTestCases": [
-            {
-                "input": "Hello World 123!",
-                "expectedOutput": "7\n"
-            },
-            {
-                "input": "AEIOUaeiou",
-                "expectedOutput": "0\n"
-            }
-        ]
+        "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+        "code_stub": "# You are using Python\ndef count_consonants(s):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\ns = input().strip()\n\n# Output\nprint(count_consonants(s))"
     },
     {
         "id": 2,
-        "title": "Count Odds",
-        "description": "Write a function `count_odds(arr)` that counts how many numbers in the list `arr` are odd.",
-        "codeStub": "# You are using Python\ndef count_odds(arr):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\narr = list(map(int, input().split()))\n\n# Output\nprint(count_odds(arr))",
-        "sampleTestCases": [
+        "title": "2. Count Odds",
+        "given": "Write a function count_odds(arr) that counts how many numbers in the list arr are odd.",
+        "ask": "",
+        "input_format": "The input consists of a single line containing space-separated integers representing the list arr.",
+        "output_format": "Print a single integer: the count of odd numbers in the list.",
+        "code_constraints": "• All numbers in arr are integers.\n• The length of arr is at least 1.",
+        "sample_test_cases": [
             {
+                "test_case": 1,
                 "input": "0 -2 -3 -4",
-                "expectedOutput": "1\n"
+                "output": "1"
             }
         ],
-        "hiddenTestCases": [
-            {
-                "input": "1 3 5 7 9",
-                "expectedOutput": "5\n"
-            },
-            {
-                "input": "2 4 6 8",
-                "expectedOutput": "0\n"
-            }
-        ]
+        "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+        "code_stub": "# You are using Python\ndef count_odds(arr):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\narr = list(map(int, input().split()))\n\n# Output\nprint(count_odds(arr))"
     },
     {
         "id": 3,
-        "title": "Password Strength",
-        "description": "Write a function `password_strength(p)` that returns: 'Weak' if the password length is less than 8; 'Medium' if the password length is >= 8 AND contains at least one digit and at least one uppercase letter; 'Strong' if the password length is >= 11 AND contains at least one digit, at least one uppercase letter, at least one lowercase letter, and at least one symbol. Return exactly one of these strings: 'Weak', 'Medium', or 'Strong'.",
-        "codeStub": "# You are using Python\ndef password_strength(p):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\np = input().strip()\n\n# Output\nprint(password_strength(p))",
-        "sampleTestCases": [
+        "title": "3. Password Strength",
+        "given": "Write a function password_strength(p) that returns:\n• \"Weak\" if the password length is less than 8,\n• \"Medium\" if the password length is ≥ 8 AND contains at least one digit and at least one uppercase letter,\n• \"Strong\" if the password length is ≥ 11 AND contains at least one digit, at least one uppercase letter, at least one lowercase letter, and at least one symbol.\nReturn exactly one of these strings: \"Weak\", \"Medium\", or \"Strong\".",
+        "ask": "",
+        "input_format": "• The input consists of a single line containing the password p.\n• The password may contain letters (upper- and lowercase), digits, and symbols.",
+        "output_format": "• Print a single string: \"Weak\", \"Medium\", or \"Strong\" (without quotes).",
+        "code_constraints": "• The password string p is non-empty.\n• The password may contain any printable characters.",
+        "sample_test_cases": [
             {
+                "test_case": 1,
                 "input": "Abc@123def",
-                "expectedOutput": "Medium\n"
+                "output": "Medium"
             }
         ],
-        "hiddenTestCases": [
-            {
-                "input": "short1A",
-                "expectedOutput": "Weak\n"
-            },
-            {
-                "input": "StrongPass@123!",
-                "expectedOutput": "Strong\n"
-            }
-        ]
+        "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+        "code_stub": "# You are using Python\ndef password_strength(p):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\np = input().strip()\n\n# Output\nprint(password_strength(p))"
     },
     {
         "id": 4,
-        "title": "Diamond Shape",
-        "description": "Write a program that prints a diamond shape of asterisks (*) of size `n`, where `n` is a positive odd integer entered by the user. The diamond has `n` rows in total, the middle row has `n` stars, and the rows above and below are symmetric, each centred. Print using only spaces and *, with each row on a separate line. Do not print any extra spaces at the end of a line.",
-        "codeStub": "# You are using Python\ndef print_diamond(n):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\nn = int(input().strip())\n\n# Output\nprint_diamond(n)",
-        "sampleTestCases": [
+        "title": "4. Diamond Shape",
+        "given": "Write a program that prints a diamond shape of asterisks (*) of size n, where n is a positive odd integer entered by the user.\nThe diamond has:\n• n rows in total,\n• The middle row has n stars,\n• the rows above and below are symmetric, each centred.",
+        "ask": "",
+        "input_format": "• The input consists of a single line containing a positive integer n.\n• You may assume n is an odd integer and n ≥ 1.",
+        "output_format": "• Print the diamond shape using only spaces and *, with each row on a separate line.\n• Do not print any extra spaces at the end of a line.",
+        "code_constraints": "• n is an odd integer and 1 ≤ n ≤ 99.\n• Centre each row so that all stars form a symmetric diamond.",
+        "sample_test_cases": [
             {
+                "test_case": 1,
                 "input": "1",
-                "expectedOutput": "*\n"
+                "output": "*"
             }
         ],
-        "hiddenTestCases": [
-            {
-                "input": "3",
-                "expectedOutput": " *\n***\n *\n"
-            },
-            {
-                "input": "5",
-                "expectedOutput": "  *\n ***\n*****\n ***\n  *\n"
-            }
-        ]
+        "note": "The program will be evaluated only after the \"Submit Code\" is clicked.\nExtra spaces and new line characters in the program output will result in the failure of the test case.",
+        "code_stub": "# You are using Python\ndef print_diamond(n):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\nn = int(input().strip())\n\n# Output\nprint_diamond(n)"
     }
 ]

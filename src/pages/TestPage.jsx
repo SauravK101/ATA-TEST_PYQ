@@ -6,7 +6,7 @@ import RightPanel from '../components/RightPanel';
 export default function TestPage() {
   const { setId } = useParams();
   const navigate = useNavigate();
-  
+
   const [questions, setQuestions] = useState([]);
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [questionStatuses, setQuestionStatuses] = useState({}); // { 0: 'Answered', 1: 'Skipped', 2: 'Not Viewed' }
@@ -19,14 +19,17 @@ export default function TestPage() {
       .then((module) => {
         const qList = module.default;
         setQuestions(qList);
-        
-        // Initialize statuses
+
+        // Initialize statuses and code stubs
         const initialStatuses = {};
         const initialCodes = {};
+
         qList.forEach((q, idx) => {
-          initialStatuses[idx] = idx === 0 ? 'Not Viewed' : 'Not Viewed';
-          initialCodes[idx] = q.codeStub;
+          initialStatuses[idx] = 'Not Viewed';
+          // Fixed: changed q.codeStub to q.code_stub to match JSON
+          initialCodes[idx] = q.code_stub || '';
         });
+
         setQuestionStatuses(initialStatuses);
         setUserCodes(initialCodes);
         setLoading(false);
@@ -45,10 +48,10 @@ export default function TestPage() {
       Object.values(currentStatuses).forEach(status => {
         if (status === 'Answered') answeredCount++;
       });
-      
+
       const total = questions.length;
       const score = Math.round((answeredCount / total) * 100) || 0;
-      
+
       navigate('/results', { state: { score, total, answeredCount } });
       return currentStatuses;
     });
@@ -56,15 +59,15 @@ export default function TestPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-nocturne-bg flex items-center justify-center">
-        <div className="text-nocturne-text text-xl">Loading Question Bank...</div>
+      <div className="flex min-h-screen items-center justify-center bg-nocturne-bg">
+        <div className="text-xl text-nocturne-text">Loading Question Bank...</div>
       </div>
     );
   }
 
   const handleNavigateQuestion = (index) => {
     if (questionStatuses[currentQIndex] === 'Not Viewed') {
-      setQuestionStatuses(prev => ({...prev, [currentQIndex]: 'Skipped'}));
+      setQuestionStatuses(prev => ({ ...prev, [currentQIndex]: 'Skipped' }));
     }
     setCurrentQIndex(index);
   };
@@ -73,11 +76,12 @@ export default function TestPage() {
   const activeCode = userCodes[currentQIndex] || '';
 
   const handleCodeChange = (newCode) => {
-    setUserCodes(prev => ({...prev, [currentQIndex]: newCode}));
+    setUserCodes(prev => ({ ...prev, [currentQIndex]: newCode }));
   };
 
   const markAnsweredAndAdvance = () => {
-    setQuestionStatuses(prev => ({...prev, [currentQIndex]: 'Answered'}));
+    setQuestionStatuses(prev => ({ ...prev, [currentQIndex]: 'Answered' }));
+
     if (currentQIndex < questions.length - 1) {
       setCurrentQIndex(currentQIndex + 1);
     }
@@ -86,21 +90,22 @@ export default function TestPage() {
   const isLastQuestion = currentQIndex === questions.length - 1;
 
   return (
-    <div className="flex h-screen w-full bg-nocturne-bg text-nocturne-text font-[family-name:--font-sans] overflow-hidden">
+    <div className="flex h-screen w-full overflow-hidden bg-nocturne-bg font-[family-name:--font-sans] text-nocturne-text">
       {/* Split Pane - 50% / 50% roughly on desktop */}
-      <div className="w-1/2 border-r border-nocturne-border h-full flex flex-col">
-        <LeftPanel 
-          question={currentQuestion} 
+      <div className="flex h-full w-1/2 flex-col border-r border-nocturne-border">
+        <LeftPanel
+          question={currentQuestion}
           questionsCount={questions.length}
           currentQIndex={currentQIndex}
           questionStatuses={questionStatuses}
           onNavigate={handleNavigateQuestion}
         />
       </div>
-      <div className="w-1/2 h-full flex flex-col bg-nocturne-surface">
-        <RightPanel 
-          question={currentQuestion} 
-          code={activeCode} 
+
+      <div className="flex h-full w-1/2 flex-col bg-nocturne-surface">
+        <RightPanel
+          question={currentQuestion}
+          code={activeCode}
           onCodeChange={handleCodeChange}
           onSubmitSuccess={markAnsweredAndAdvance}
           isLastQuestion={isLastQuestion}

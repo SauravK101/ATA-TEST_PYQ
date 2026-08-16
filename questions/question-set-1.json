@@ -1,80 +1,327 @@
 [
   {
     "id": 1,
-    "title": "Simple Grade Calculator",
-    "description": "Create a function called calculate_final_grade that calculates a student's final score and grade based on their performance in assignments, midterm exam, final exam, and attendance. \nRequirements: The function should take the following parameters: \n>>> assignments (list of int): Scores from 0 to 100 \n>>> midterm (int): Midterm exam score (0 to 100) \n>>> final_exam (int): Final exam score (0 to 100) \n>>> attendance (int): Attendance percentage (0 to 100) \n\nWeights: Assignments 40%, Midterm 20%, Final 30%, Attendance 10%. \n\nGrades: \n>>> 90-100='A', \n>>> 80-89='B', \n>>> 70-79='C', \n>>> 60-69='D', \n>>> Below 60='F'. \nSpecial rules: \n>>> If final_exam < 50, max grade 'C'; \n>>> If attendance < 70, max grade 'B'; \n>>> If assignments average, midterm, and final_exam > 95, grade='A+'. \nEdge cases: \n>>> Negative or > 100 return 'Invalid score'; \n>>> Empty assignments return 'No assignment scores provided'. \nReturn format(string): \n'score is <score>, grade is <grade> and passed'.",
-    "codeStub": "# You are using Python\ndef calculate_final_grade(assignments, midterm, final_exam, attendance):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input\nassignments = list(map(int, input().split()))\nmidterm = int(input())\nfinal_exam = int(input())\nattendance = int(input())\n\nprint(calculate_final_grade(assignments, midterm, final_exam, attendance))",
-    "sampleTestCases": [
+    "title": "1. Simple Grade Calculator",
+    "given": "Create a function called calculate_final_grade that calculates a student's final score and grade based on their performance in assignments, midterm exam, final exam, and attendance.",
+    "ask": "Write a program that uses the following rules to determine the final score, grade, and pass/fail status.",
+    "requirements": {
+      "parameters": [
+        {
+          "name": "assignments",
+          "type": "list of int",
+          "description": "Scores from 0 to 100"
+        },
+        {
+          "name": "midterm",
+          "type": "int",
+          "description": "Midterm exam score (0 to 100)"
+        },
+        {
+          "name": "final_exam",
+          "type": "int",
+          "description": "Final exam score (0 to 100)"
+        },
+        {
+          "name": "attendance",
+          "type": "int",
+          "description": "Attendance percentage (0 to 100)"
+        }
+      ],
+      "weights": [
+        {
+          "component": "Assignments average",
+          "weight": "40%"
+        },
+        {
+          "component": "Midterm",
+          "weight": "20%"
+        },
+        {
+          "component": "Final exam",
+          "weight": "30%"
+        },
+        {
+          "component": "Attendance",
+          "weight": "10%"
+        }
+      ],
+      "letter_grades": [
+        {
+          "range": "90-100",
+          "grade": "A"
+        },
+        {
+          "range": "80-89",
+          "grade": "B"
+        },
+        {
+          "range": "70-79",
+          "grade": "C"
+        },
+        {
+          "range": "60-69",
+          "grade": "D"
+        },
+        {
+          "range": "Below 60",
+          "grade": "F"
+        }
+      ],
+      "special_rules": [
+        {
+          "condition": "If final_exam < 50",
+          "rule": "grade cannot be higher than 'C'"
+        },
+        {
+          "condition": "If attendance < 70",
+          "rule": "grade cannot be higher than 'B'"
+        },
+        {
+          "condition": "If assignments average, midterm, and final_exam > 95",
+          "rule": "grade = 'A+'"
+        }
+      ]
+    },
+    "edge_cases": [
       {
-        "input": "85 90 88\n75\n80\n95",
-        "expectedOutput": "score is 83.6, grade is B and passed\n"
-      }
-    ],
-    "hiddenTestCases": [
-      {
-        "input": "-5\n50\n50\n50",
-        "expectedOutput": "Invalid score\n"
+        "condition": "If any input is negative or > 100",
+        "return": "Invalid score"
       },
       {
-        "input": "98 99 96\n97\n98\n99",
-        "expectedOutput": "score is 97.8, grade is A+ and passed\n"
+        "condition": "If assignments list is empty",
+        "return": "No assignment scores provided"
       }
-    ]
+    ],
+    "return_format": {
+      "format": "\"score is <score>, grade is <grade> and passed\"",
+      "details": "(Where score is rounded to 1 decimal, and passed is True if grade is D or higher, else False)"
+    },
+    "example": {
+      "input": "[85, 90, 88]\n75\n80\n95",
+      "output": "score is 83.6, grade is B and passed",
+      "explanation": [
+        "Assignments average: (85 + 90 + 88)/3 = 87.67",
+        "Weighted Score = (87.67 x 0.4) + (75 x 0.2) + (80 x 0.3) + (95 x 0.1) = 84.07",
+        "Rounded Score = 84.1",
+        "Grade = B",
+        "Passed = True"
+      ]
+    },
+    "input_format": "Dynamic using input()",
+    "output_format": "Final string as per format",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
+      {
+        "test_case": 1,
+        "input": "85 90 88\n75\n80\n95",
+        "output": "score is 83.6, grade is B and passed"
+      }
+    ],
+    "note": "The program will be evaluated only after the 'Submit Code' is clicked. Extra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef calculate_final_grade(assignments, midterm, final_exam, attendance):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input\nassignments = list(map(int, input().split()))\nmidterm = int(input())\nfinal_exam = int(input())\nattendance = int(input())\n\nprint(calculate_final_grade(assignments, midterm, final_exam, attendance))"
   },
   {
     "id": 2,
-    "title": "Movie Ticket Calculator",
-    "description": "Create a function called calculate_ticket_price that determines the price of a movie ticket. \nBase price: $12.00. \nAge discounts: Children (<12) 50% off, Seniors (>=65) 30% off. \nDay discounts: Tuesday flat $6.00, Thursday 25% off after age discounts. \nTime discounts: Early morning (<12) 25% off, Late night (>=20) 15% off. \nEdge Cases: negative age returns 'Invalid age', invalid day returns 'Invalid day', invalid time returns 'Invalid time'.",
-    "codeStub": "# You are using Python\nfrom decimal import Decimal, ROUND_HALF_UP, getcontext\n\ngetcontext().prec = 6\n\ndef calculate_ticket_price(age, day, time):\n    valid_days = [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"]\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\nage = int(input())\nday = input()\ntime = int(input())\n\nprint(calculate_ticket_price(age, day, time))",
-    "sampleTestCases": [
+    "title": "2. Movie Ticket Calculator",
+    "given": "Create a function called calculate_ticket_price that determines the price of a movie ticket based on the customer's age, day of the week, and movie time.",
+    "ask": "Write a program to calculate the final ticket price using the following rules:",
+    "requirements": {
+      "parameters": [
+        {
+          "name": "age",
+          "type": "int",
+          "description": "Age of the customer"
+        },
+        {
+          "name": "day",
+          "type": "string",
+          "description": "Day of the week ('Monday' to \"Sunday\")"
+        },
+        {
+          "name": "time",
+          "type": "int",
+          "description": "Movie time in 24-hour format (0 to 23)"
+        }
+      ],
+      "pricing_rules": {
+        "base_ticket_price": 12.00,
+        "age_discounts": [
+          {
+            "condition": "Children (age < 12)",
+            "discount": "50% off"
+          },
+          {
+            "condition": "Seniors (age >= 65)",
+            "discount": "30% off"
+          }
+        ],
+        "day_discounts": [
+          {
+            "day": "Tuesday",
+            "rule": "All tickets are $6.00 flat (no other discounts)"
+          },
+          {
+            "day": "Thursday",
+            "rule": "25% off after applying any age discounts"
+          }
+        ],
+        "time_discounts": {
+          "note": "applied after all previous discounts",
+          "rules": [
+            {
+              "condition": "Early morning (time < 12)",
+              "discount": "25% off"
+            },
+            {
+              "condition": "Late night (time >= 20)",
+              "discount": "15% off"
+            }
+          ]
+        }
+      }
+    },
+    "edge_cases": [
       {
-        "input": "70\nThursday\n10",
-        "expectedOutput": "4.73\n"
+        "condition": "If age is negative",
+        "return": "Invalid age"
       },
       {
-        "input": "-5\nWednesday\n15",
-        "expectedOutput": "Invalid age\n"
+        "condition": "If day is not a valid weekday",
+        "return": "Invalid day"
+      },
+      {
+        "condition": "If time is not between 0 and 23",
+        "return": "Invalid time"
       }
     ],
-    "hiddenTestCases": [
+    "input_format": "Dynamic using input()",
+    "output_format": "Float or String",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
-        "input": "10\nTuesday\n15",
-        "expectedOutput": "6.00\n"
+        "test_case": 1,
+        "input": "70\nThursday\n10",
+        "output": "4.73"
       },
       {
-        "input": "25\nMonday\n21",
-        "expectedOutput": "10.20\n"
+        "test_case": 2,
+        "input": "-5\nWednesday\n15",
+        "output": "Invalid age"
       }
-    ]
+    ],
+    "note": "The program will be evaluated only after the 'Submit Code' is clicked. Extra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\nfrom decimal import Decimal, ROUND_HALF_UP, getcontext\n\ngetcontext().prec = 6\n\ndef calculate_ticket_price(age, day, time):\n    valid_days = [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"]\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\nage = int(input())\nday = input()\ntime = int(input())\n\nprint(calculate_ticket_price(age, day, time))"
   },
   {
     "id": 3,
     "title": "Shopping Cart Price Calculator",
-    "description": "Create a function called calculate_final_price that determines the final checkout price of a shopping cart based on the cart total, customer type, coupon code, and items count.\nCustomer Type: 'premium' 10% off, 'gold' 20% off, other 0%. Coupon: 'SAVE10' 10% off, 'SAVE20' 20% off, 'HALF' 50% off. Bulk: 10-20 items 5% off, 21-50 items 10% off, 51+ items 15% off. Shipping: If cart total is <= $100 after discounts, add $10 fee. Return rounded to 2 decimal places. Edge Cases: negative cart_total returns 'Invalid cart total', negative items_count returns 'Invalid item count'.",
-    "codeStub": "# You are using Python\ndef calculate_final_price(cart_total, customer_type, coupon_code, items_count):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\ncart_total = float(input())\ncustomer_type = input()\ncoupon_code = input()\nitems_count = int(input())\n\n# Output\nprint(calculate_final_price(cart_total, customer_type, coupon_code, items_count))",
-    "sampleTestCases": [
+    "given": "Create a function called calculate_final_price that determines the final checkout price of a shopping cart based on the cart total, customer type, coupon code, and items count.",
+    "ask": "Write a program to calculate the final price by applying the following rules sequentially:",
+    "requirements": {
+      "parameters": [
+        {
+          "name": "cart_total",
+          "type": "float",
+          "description": "Total value of items in the cart"
+        },
+        {
+          "name": "customer_type",
+          "type": "string",
+          "description": "Type of customer (e.g., \"regular\", \"premium\", \"gold\")"
+        },
+        {
+          "name": "coupon_code",
+          "type": "string",
+          "description": "Discount code applied at checkout"
+        },
+        {
+          "name": "items_count",
+          "type": "int",
+          "description": "Total number of items in the cart"
+        }
+      ],
+      "pricing_rules": {
+        "application_order": "sequentially",
+        "customer_type_discount": [
+          {
+            "type": "premium",
+            "discount": "10% off"
+          },
+          {
+            "type": "gold",
+            "discount": "20% off"
+          },
+          {
+            "type": "unrecognized or invalid",
+            "discount": "default to \"regular\" (0% off)"
+          }
+        ],
+        "coupon_code_discount": [
+          {
+            "code": "SAVE10",
+            "discount": "10% off"
+          },
+          {
+            "code": "SAVE20",
+            "discount": "20% off"
+          },
+          {
+            "code": "HALF",
+            "discount": "50% off"
+          }
+        ],
+        "bulk_purchase_discount": [
+          {
+            "range": "10 to 20 items",
+            "discount": "5% off"
+          },
+          {
+            "range": "21 to 50 items",
+            "discount": "10% off"
+          },
+          {
+            "range": "51 or more items",
+            "discount": "15% off"
+          }
+        ],
+        "shipping_charges": {
+          "condition": "If the calculated cart total (after all applicable discounts) is $100 or less",
+          "fee": "add a $10 shipping fee"
+        }
+      },
+      "final_output": "The final returned price must be rounded to 2 decimal places."
+    },
+    "edge_cases": [
       {
-        "input": "200.0\ngold\nSAVE20\n30",
-        "expectedOutput": "115.2\n"
+        "condition": "If cart_total is negative",
+        "return": "Invalid cart total"
       },
       {
-        "input": "50.0\nregular\nNONE\n5",
-        "expectedOutput": "60.0\n"
-      },
-      {
-        "input": "-15.0\npremium\nSAVE10\n4",
-        "expectedOutput": "Invalid cart total\n"
+        "condition": "If items_count is negative",
+        "return": "Invalid item count"
       }
     ],
-    "hiddenTestCases": [
+    "input_format": "Dynamic using input()",
+    "output_format": "Float or String",
+    "code_constraints": "NIL",
+    "sample_test_cases": [
       {
-        "input": "100.0\ninvalid_type\nNONE\n1",
-        "expectedOutput": "110.0\n"
+        "test_case": 1,
+        "input": "200.0\ngold\nSAVE20\n30",
+        "output": "115.2"
       },
       {
-        "input": "200.0\nregular\nHALF\n55",
-        "expectedOutput": "95.0\n"
+        "test_case": 2,
+        "input": "50.0\nregular\nNONE\n5",
+        "output": "60.0"
+      },
+      {
+        "test_case": 3,
+        "input": "-15.0\npremium\nSAVE10\n4",
+        "output": "Invalid cart total"
       }
-    ]
+    ],
+    "note": "The program will be evaluated only after the 'Submit Code' is clicked. Extra spaces and new line characters in the program output will result in the failure of the test case.",
+    "code_stub": "# You are using Python\ndef calculate_final_price(cart_total, customer_type, coupon_code, items_count):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\ncart_total = float(input())\ncustomer_type = input()\ncoupon_code = input()\nitems_count = int(input())\n\n# Output\nprint(calculate_final_price(cart_total, customer_type, coupon_code, items_count))"
   }
 ]

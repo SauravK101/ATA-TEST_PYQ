@@ -31,33 +31,33 @@ export default function RightPanel({ question, code, onCodeChange, onSubmitSucce
   };
 
   const handleCompileAndRun = async () => {
-    if (!isReady || !question?.sampleTestCases) return;
+    if (!isReady || !question?.sample_test_cases) return;
     setIsRunning(true);
     setOutputConsole('Compiling and running sample test cases...\n');
-    
+
     let allPassed = true;
     let newOutput = '';
-    
-    for (let i = 0; i < question.sampleTestCases.length; i++) {
-      const tc = question.sampleTestCases[i];
+
+    for (let i = 0; i < question.sample_test_cases.length; i++) {
+      const tc = question.sample_test_cases[i];
       try {
         const res = await runCode(code, tc.input);
         const actualOutput = res.output;
         const err = res.error;
-        
+
         newOutput += `\n--- Test Case ${i + 1} ---\n`;
         if (err) {
           newOutput += `Error:\n${err}\n`;
           allPassed = false;
         } else {
           newOutput += `Input:\n${tc.input}\n`;
-          newOutput += `Expected Output:\n${tc.expectedOutput}\n`;
+          newOutput += `Expected Output:\n${tc.output}\n`;
           newOutput += `Actual Output:\n${actualOutput}\n`;
-          if (actualOutput.trim() === tc.expectedOutput.trim()) {
-             newOutput += 'Result: PASSED ✅\n';
+          if (actualOutput.trim() === tc.output.trim()) {
+            newOutput += 'Result: PASSED ✅\n';
           } else {
-             newOutput += 'Result: FAILED ❌\n';
-             allPassed = false;
+            newOutput += 'Result: FAILED ❌\n';
+            allPassed = false;
           }
         }
       } catch (e) {
@@ -65,25 +65,32 @@ export default function RightPanel({ question, code, onCodeChange, onSubmitSucce
         allPassed = false;
       }
     }
-    
+
     setOutputConsole(prev => prev + newOutput);
     setIsRunning(false);
   };
 
   const handleSubmit = async () => {
-    if (!isReady || !question?.hiddenTestCases) return;
+    if (!isReady) return;
     setIsRunning(true);
-    setOutputConsole('Submitting code and running hidden test cases...\n');
-    
+    setOutputConsole('Submitting code and running test cases...\n');
+
     let allPassed = true;
-    
-    const allTests = [...(question.sampleTestCases || []), ...(question.hiddenTestCases || [])];
-    
+
+    // Combining sample and hidden tests safely based on JSON structure
+    const allTests = [...(question?.sample_test_cases || []), ...(question?.hidden_test_cases || [])];
+
+    if (allTests.length === 0) {
+      setOutputConsole(prev => prev + '\nNo test cases found to evaluate.');
+      setIsRunning(false);
+      return;
+    }
+
     for (let i = 0; i < allTests.length; i++) {
       const tc = allTests[i];
       try {
         const res = await runCode(code, tc.input);
-        if (res.error || res.output.trim() !== tc.expectedOutput.trim()) {
+        if (res.error || res.output.trim() !== tc.output.trim()) {
           allPassed = false;
           break;
         }
@@ -92,7 +99,7 @@ export default function RightPanel({ question, code, onCodeChange, onSubmitSucce
         break;
       }
     }
-    
+
     if (allPassed) {
       setOutputConsole(prev => prev + '\nAll test cases PASSED! ✅\nMoving to next step...');
       setTimeout(() => {
