@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nocturne-bg: #13111C;
+  --color-nocturne-surface: #1C1A28;
+  --color-nocturne-surface-alt: #0B0B0F;
+  --color-nocturne-border: #33323E;
+  --color-nocturne-text: #F7F7F8;
+  --color-nocturne-text-secondary: #A1A0AB;
+  --color-nocturne-text-tertiary: #6B7280;
+  --color-nocturne-accent: #59497A;
+  --color-nocturne-success: #428A72;
+  --color-nocturne-pink: #F9A8D4;
+
+  --font-serif: "IBM Plex Serif", serif;
+  --font-sans: "Inter", "Helvetica", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-nocturne-surface/60 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)];
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-nocturne-bg);
+  color: var(--color-nocturne-text);
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar for Monaco and Panels */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-nocturne-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-nocturne-text-tertiary);
+}

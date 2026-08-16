@@ -1,0 +1,172 @@
+[
+    {
+        "id": 1,
+        "title": "Shopping Cart Discount Calculator",
+        "description": "Create a function called `calculate_final_price` that determines the final price of a shopping cart. Customer Type Discount: 'premium' 10% off, 'gold' 20% off. Coupon Code Discount (applied after customer discount): 'SAVE10' additional 10% off, 'SAVE20' additional 20% off, 'HALF' additional 50% off. Bulk Purchase Discount (applied after above two): 10-20 items additional 5% off, 21-50 items additional 10% off, 51+ items additional 15% off. Shipping: If final price > 100 Free shipping, else add $10. Edge Cases: If cart_total is negative return 'Invalid cart total', if items_count is negative return 'Invalid item count', if customer_type is invalid default to 'regular'. Print the final price as a float rounded to 2 decimal places.",
+        "codeStub": "# You are using Python\ndef calculate_final_price(cart_total, customer_type, coupon_code, items_count):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\ncart_total = float(input())\ncustomer_type = input()\ncoupon_code = input()\nitems_count = int(input())\n\n# Output\nprint(calculate_final_price(cart_total, customer_type, coupon_code, items_count))",
+        "sampleTestCases": [
+            {
+                "input": "150\npremium\nSAVE20\n15",
+                "expectedOutput": "102.6\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "200\ngold\nSAVE10\n25",
+                "expectedOutput": "129.6\n"
+            },
+            {
+                "input": "-50\nregular\nNone\n5",
+                "expectedOutput": "Invalid cart total\n"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Find the Missing Number",
+        "description": "Write a program to find the missing number from the sequence 1 to n. Input: Integer n, followed by a list of n-1 space-separated distinct integers. Output: The missing number.",
+        "codeStub": "# You are using Python\ndef find_missing_number(n, arr):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\n# Input section\nn = int(input().strip())\narr = list(map(int, input().split()))\n\n# Output\nprint(find_missing_number(n, arr))",
+        "sampleTestCases": [
+            {
+                "input": "4\n1 2 4",
+                "expectedOutput": "3\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "5\n1 3 4 5",
+                "expectedOutput": "2\n"
+            },
+            {
+                "input": "3\n2 3",
+                "expectedOutput": "1\n"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Magical Number Machine",
+        "description": "Write a program to print all the values of n during this process until it becomes 1. Rules: If the number is even, it gets divided by 2. If the number is odd, it gets multiplied by 3 and then increased by 1. Print all numbers in the sequence (including starting number and 1) in a single line separated by space.",
+        "codeStub": "# You are using Python\n\"\"\"\n/**********Your Code goes here.....***********/\n\"\"\"",
+        "sampleTestCases": [
+            {
+                "input": "1",
+                "expectedOutput": "1\n"
+            },
+            {
+                "input": "3",
+                "expectedOutput": "3 10 5 16 8 4 2 1\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "6",
+                "expectedOutput": "6 3 10 5 16 8 4 2 1\n"
+            },
+            {
+                "input": "5",
+                "expectedOutput": "5 16 8 4 2 1\n"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Find the Next Prime Number",
+        "description": "Given an integer n. Write a program to find the first prime number greater than n. Edge Cases: If n < 2, the answer should be 2. Handle large numbers efficiently.",
+        "codeStub": "# You are using Python\ndef is_prime(num):\n    \n    # Your code here\n    pass\n\ndef next_prime(n):\n    \n    # Your code here\n    pass\n\n# Input\nn = int(input())\n\n# Output\nprint(next_prime(n))",
+        "sampleTestCases": [
+            {
+                "input": "2",
+                "expectedOutput": "3\n"
+            },
+            {
+                "input": "1",
+                "expectedOutput": "2\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "7",
+                "expectedOutput": "11\n"
+            },
+            {
+                "input": "14",
+                "expectedOutput": "17\n"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Factorial Calculation",
+        "description": "Given an integer n, find the factorial of n. Factorial of n = 1 * 2 * 3 * ... * n. Edge Cases: If n = 0, output = 1.",
+        "codeStub": "# You are using Python\n\n\"\"\"\n/**********Your Code goes here.....***********/\n\"\"\"",
+        "sampleTestCases": [
+            {
+                "input": "0",
+                "expectedOutput": "1\n"
+            },
+            {
+                "input": "1",
+                "expectedOutput": "1\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "5",
+                "expectedOutput": "120\n"
+            },
+            {
+                "input": "4",
+                "expectedOutput": "24\n"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Decreasing Star Pattern",
+        "description": "Given an integer n, print a star pattern in decreasing order from n to 1. First row -> n stars, each next row -> one less star, continue until 1 star. Note that stars are separated by space in the sample output.",
+        "codeStub": "# You are using Python\n\n\"\"\"\n/**********Your Code goes here.....***********/\n\"\"\"",
+        "sampleTestCases": [
+            {
+                "input": "4",
+                "expectedOutput": "* * * *\n* * *\n* *\n*\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "2",
+                "expectedOutput": "* *\n*\n"
+            },
+            {
+                "input": "3",
+                "expectedOutput": "* * *\n* *\n*\n"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Treasure Hunt: GCD and LCM",
+        "description": "Write a program to help find the GCD and LCM of two integers a and b. GCD: Largest number that divides both a and b. LCM: Smallest number divisible by both a and b. Print GCD and LCM separated by space.",
+        "codeStub": "# You are using Python\nimport math\n\n\"\"\"\n/**********Your Code goes here.....***********/\n\"\"\"",
+        "sampleTestCases": [
+            {
+                "input": "12 15",
+                "expectedOutput": "3 60\n"
+            },
+            {
+                "input": "4 7",
+                "expectedOutput": "1 28\n"
+            }
+        ],
+        "hiddenTestCases": [
+            {
+                "input": "10 25",
+                "expectedOutput": "5 50\n"
+            },
+            {
+                "input": "8 12",
+                "expectedOutput": "4 24\n"
+            }
+        ]
+    }
+]

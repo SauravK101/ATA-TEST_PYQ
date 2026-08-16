@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "title": "Calculate Average",
+    "description": "Write a program that takes a list of numbers and returns the average (mean) of those numbers. Approach: Use a loop to compute the total sum of the numbers. Divide the total by the number of elements to find the mean.",
+    "codeStub": "# You are using Python\ndef calculate_average(numbers):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = calculate_average(numbers)\nprint(result)",
+    "sampleTestCases": [
+      {
+        "input": "10 20 30 40 50",
+        "expectedOutput": "30.0\n"
+      },
+      {
+        "input": "15 25",
+        "expectedOutput": "20.0\n"
+      }
+    ],
+    "hiddenTestCases": [
+      {
+        "input": "5 15 25",
+        "expectedOutput": "15.0\n"
+      },
+      {
+        "input": "100 200",
+        "expectedOutput": "150.0\n"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Sum of Even Numbers",
+    "description": "Write a program that takes a list of integers and returns the sum of all even numbers in the list. Approach: Use a loop to iterate through the list. Check if each number is even using the modulus operator. Accumulate the sum of even numbers.",
+    "codeStub": "# You are using Python\ndef sum_even_numbers(numbers):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nnumbers = list(map(int, input().split()))\nresult = sum_even_numbers(numbers)\nprint(result)",
+    "sampleTestCases": [
+      {
+        "input": "1 2 3 4 5 6",
+        "expectedOutput": "12\n"
+      },
+      {
+        "input": "10 15 20 25",
+        "expectedOutput": "30\n"
+      }
+    ],
+    "hiddenTestCases": [
+      {
+        "input": "2 4 6",
+        "expectedOutput": "12\n"
+      },
+      {
+        "input": "7 9 11",
+        "expectedOutput": "0\n"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Count Elements",
+    "description": "Write a program that takes a list and an element, and returns how many times that element appears in the list. Approach: Use a loop to iterate through the list. Compare each item to the target. Count occurrences using a counter variable.",
+    "codeStub": "# You are using Python\ndef count_element(items, target):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\nitems = list(map(int, input().split()))\ntarget = int(input())\nresult = count_element(items, target)\nprint(result)",
+    "sampleTestCases": [
+      {
+        "input": "1 2 3 2 4 2 5\n2",
+        "expectedOutput": "3\n"
+      },
+      {
+        "input": "10 20 30 40\n50",
+        "expectedOutput": "0\n"
+      }
+    ],
+    "hiddenTestCases": [
+      {
+        "input": "5 5 5\n5",
+        "expectedOutput": "3\n"
+      },
+      {
+        "input": "1 2 3\n1",
+        "expectedOutput": "1\n"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Polynomial Evaluation",
+    "description": "Write a program that evaluates a polynomial at a given value of x. The polynomial is represented by a list of coefficients in ascending order of power. For example, a list [2, 3, 1] represents the polynomial 2 + 3x + x^2. The program should take the list of coefficients and a value of x as input and return the evaluated result.",
+    "codeStub": "# You are using Python\ndef evaluate_polynomial(coefficients, x):\n    \"\"\"\n    /**********Your Code goes here.....***********/\n    \"\"\"\n    pass\n\ncoefficients = list(map(int, input().split()))\nx = int(input())\nresult = evaluate_polynomial(coefficients, x)\nif hasattr(result, 'is_integer') and result.is_integer():\n    print(int(result))\nelse:\n    print(result)",
+    "sampleTestCases": [
+      {
+        "input": "2 3 1\n2",
+        "expectedOutput": "12\n"
+      },
+      {
+        "input": "1 0 -1\n3",
+        "expectedOutput": "-8\n"
+      }
+    ],
+    "hiddenTestCases": [
+      {
+        "input": "5 2\n10",
+        "expectedOutput": "25\n"
+      },
+      {
+        "input": "0 0 1\n5",
+        "expectedOutput": "25\n"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Reverse List",
+    "description": "Write a program that takes a list and returns a new list with the elements in reverse order. Do not use Python's built-in reverse() method or reversed() function. Approach: Use a loop to iterate through the list from the last index to the first. Append each element to a new list.",
+    "codeStub": "# You are using Python\ndef reverse_list(items):\n    # Your code goes here...\n\nitems = list(map(int, input().split()))\nresult = reverse_list(items)\nprint(result)",
+    "sampleTestCases": [
+      {
+        "input": "1 2 3 4 5",
+        "expectedOutput": "[5, 4, 3, 2, 1]\n"
+      },
+      {
+        "input": "10 20 30",
+        "expectedOutput": "[30, 20, 10]\n"
+      }
+    ],
+    "hiddenTestCases": [
+      {
+        "input": "9 8 7",
+        "expectedOutput": "[7, 8, 9]\n"
+      },
+      {
+        "input": "1",
+        "expectedOutput": "[1]\n"
+      }
+    ]
+  }
+]
