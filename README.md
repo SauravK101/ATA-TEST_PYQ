@@ -1,16 +1,22 @@
-# React + Vite
+# ATA Test PYQ
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is a web application built with React and Vite that allows users to practice and take tests on Python programming. It uses Pyodide to execute Python code directly inside the browser.
 
-Currently, two official plugins are available:
+## How to run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Follow these simple steps to run the project on your local machine:
 
-## React Compiler
+1. **Install dependencies:**
+   Make sure you have [Node.js](https://nodejs.org/) installed. Then, open your terminal in the project directory and run:
+   ```bash
+   npm install
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Start the development server:**
+   Once the installation is complete, run:
+   ```bash
+   npm run dev
+   ```
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+3. **Open the app:**
+   Open your web browser and navigate to the URL provided in your terminal (usually `http://localhost:5173/`).
