@@ -19,7 +19,8 @@
 
 @layer utilities {
   .glass-panel {
-    @apply bg-nocturne-surface/60 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0, 0, 0, 0.5)];
+    @apply bg-nocturne-surface/60 backdrop-blur-md border border-white/10;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   }
 }
 

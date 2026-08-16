@@ -3,7 +3,7 @@ import Editor from '@monaco-editor/react';
 import { Play, Check, Clock, Globe, AlertTriangle } from 'lucide-react';
 import { usePyodide } from '../hooks/usePyodide';
 
-export default function RightPanel({ question, code, onCodeChange, onSubmitSuccess, isLastQuestion, onEndTest, timeLimit = 60 * 60 }) {
+export default function RightPanel({ question, code, onCodeChange, onSubmitSuccess, isLastQuestion, onEndTest, timeLimit = 90 * 60 }) {
   const { runCode, isReady } = usePyodide();
   const [outputConsole, setOutputConsole] = useState('');
   const [isRunning, setIsRunning] = useState(false);
